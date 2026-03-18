@@ -14,11 +14,17 @@ This inefficiency causes massive revenue leakage. As a Data Scientist, my object
 
 LightGBM emerged as the superior model for handling the highly imbalanced historical loan dataset. While the vast majority of applicants are good borrowers, making it challenging for standard models to detect defaulters, our optimized model successfully navigated this without falsely rejecting good customers.
 
+![Customer Proportion: Non-Default vs Default](assets/Customer-Proportion.jpg)
+
 Bottom-line Impact: By upgrading the model to LightGBM, the company effectively captures the 8.1% high-risk customers while drastically reducing the false rejection of the 91.9% good customers. This directly translates to millions in secured interest revenue that would have otherwise been lost to competitors.
 
 ## 💡 Insights Deep Dive
 
 ### 1. The Core Driver of Default (External Bureau Scores)
+
+![Top 15 Most Impactful Features in Separating Default vs Non-Default (Metric: GAIN)](assets/Top-15-Features-Gain.jpg)
+
+![Distribution of Average External Score](assets/Distribution-External-Score.jpg)
 
 The Data: The LightGBM Gain metric shows that external credit bureau scores (EXT_SOURCE_MEAN) dominate the model's decision-making process, vastly outperforming basic demographics like age or income. The distribution chart proves that customers with lower external scores have a significantly higher density of defaults.
 
@@ -28,6 +34,10 @@ Business Impact (Efficiency & Cost): By using EXT_SOURCE_MEAN as the absolute pr
 
 ### 2. High-Risk Customer Profiling (Age & Occupation)
 
+![Default Rate by Age Group](assets/Default-Rate-by-Age-Group.jpg)
+
+![Top 10 Occupations with the Highest Default Rate](assets/Top-10-Occupations.jpg)
+
 The Data: Customers aged 20-30 years, as well as those working as Low-skill Laborers and Drivers (Blue-collar workers), exhibit the highest default rates compared to other segments.
 
 The Insight: Younger demographics and blue-collar workers often have unstable income streams or lack financial literacy, making them highly vulnerable to economic shocks.
@@ -35,6 +45,10 @@ The Insight: Younger demographics and blue-collar workers often have unstable in
 Business Impact (Profit Maximization): Blanket-rejecting this massive demographic hurts financial inclusion and sacrifices market share. Instead, the business should offer tailored, low-risk micro-loans with shorter tenors for this segment. This strategy safely monetizes a high-risk group while building their credit history for larger future loans.
 
 ### 3. Model Evaluation: Maximizing Good Loan Approvals
+
+![Confusion Matrix - Logistic Regression](assets/Confusion-Matrix-LogReg.jpg)
+
+![Receiver Operating Characteristic (ROC) - LightGBM](<assets/ROC-LightGBM.jpg).png>)
 
 The Data: Logistic Regression struggled with the imbalanced data, producing a high number of False Positives. In contrast, LightGBM maintained a strong ROC-AUC score, proving its superior capability in distinguishing between good and bad credit.
 
