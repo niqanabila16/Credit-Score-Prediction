@@ -8,9 +8,7 @@ This inefficiency causes massive revenue leakage. As a Data Scientist, my object
 
 ### Project Links
 
-- Complete Repository & Code
-- Data Cleaning & EDA Notebook
-- Predictive Modeling Notebook
+- [Predictive Modeling Notebook](https://colab.research.google.com/drive/1JKEsajlCfY9ByIKqxSAwWpO-LaI4JQ2h?usp=sharing)
 
 ## 📊 Executive Summary & Data Overview
 
